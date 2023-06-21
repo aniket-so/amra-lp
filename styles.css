@@ -147,12 +147,43 @@
     height: 100%;
 }
 
+/* Sricky Footer */
+.fixed-bottom{
+	display:none;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    padding:0px !important;
+    color:#fff !important;
+}
+.fixed-bottom b
+{
+    color:#fff !important;
+}
+.secbgcolor {
+    background-color: #767574 !important;
+    color:#fff !important;
+}
+
+.w3-green, .w3-hover-green:hover {
+    color: #fff!important;
+    background-color: #4CAF50!important;
+}
+
 /* Media query for screens below 768px */
 @media (max-width: 767px) {
     .video-wrapper {
-        width: 100%; /* Allow the video to occupy the full width of the container */
-        padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive resizing */
+        width: 100%;
+        padding-bottom: 56.25%;
         height: 0;
+    }
+    .fixed-bottom{
+        display:block;
     }
 }
 
@@ -168,5 +199,3 @@ footer {
     text-align: center;
     margin: 0;
 }
-
-
