@@ -1,5 +1,5 @@
 :root {
-  --primary: #87C4C4;
+  --primary: #87c4c4;
   --white: #ffffff;
 }
 
@@ -9,16 +9,16 @@
 
 .banner-img input,
 .banner-img select {
-    border: 2px solid #eeeeee;
-    height: 46px;
-    margin: 10px 0 0 0;
-    padding: 1%;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    color: #333333;
-    letter-spacing: .01em;
-    font-style: normal;
-    font-weight: 300;
+  border: 2px solid #eeeeee;
+  height: 46px;
+  margin: 10px 0 0 0;
+  padding: 1%;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: #333333;
+  letter-spacing: 0.01em;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .banner-img #name,
@@ -28,174 +28,202 @@
 .banner-img #cname,
 .banner-img #age,
 .banner-img #course {
-    width: 100%;
+  width: 100%;
 }
 
 .banner-img .button-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .banner-img #submit {
-    text-align: center;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #09757A;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #09757a;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .banner-img .submit:hover {
-    background-color: #085c60;
+  background-color: #085c60;
 }
 
 .banner-img .submit:active {
-    background-color: #0a4346;
+  background-color: #0a4346;
 }
 
 .banner-img #wrapper {
-    max-width: 1020px;
-    height: 100%;
-    background: #fff;
-    margin: 0px auto 0;
-    padding: 20px;
+  max-width: 1020px;
+  height: 100%;
+  background: #fff;
+  margin: 0px auto 0;
+  padding: 20px;
 }
 
 .banner-img #subscribeBox {
-    position: relative;
-    margin: 0 auto;
-    padding: 10px 0;
-    height: auto;
-    width: 50%;
-    min-width: 325px;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 0;
+  height: auto;
+  width: 50%;
+  min-width: 325px;
 }
 
 .banner-img *:focus {
-    outline: none;
+  outline: none;
 }
 
 .banner-img .subscribeForm {
-    display: block;
-    margin: 20px 0 0 0;
-    width: 90%;
+  display: block;
+  margin: 20px 0 0 0;
+  width: 90%;
 }
 
 .banner-img h2 {
-    font-weight: 500;
-    letter-spacing: .05em;
-    color: #333333;
-    font-style: normal;
-    font-family: source-sans-pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #333333;
+  font-style: normal;
+  font-family: source-sans-pro, sans-serif;
 }
 
 .banner-img .thin {
-    font-weight: 200;
+  font-weight: 200;
 }
 
 .banner-img a {
-    text-decoration: none;
-    color: #333333;
+  text-decoration: none;
+  color: #333333;
 }
 
 .banner-img a:hover {
-    text-decoration: none;
-    color: #C43C3E;
+  text-decoration: none;
+  color: #c43c3e;
 }
 
 .banner-img p {
-    display: block;
-    width: 90%;
-    margin: 20px 0 0 0;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    color: #333333;
-    letter-spacing: .01em;
-    font-style: normal;
-    font-weight: 300;
-    font-family: source-sans-pro;
+  display: block;
+  width: 90%;
+  margin: 20px 0 0 0;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: #333333;
+  letter-spacing: 0.01em;
+  font-style: normal;
+  font-weight: 300;
+  font-family: source-sans-pro;
 }
 
+
+
 @media screen and (max-width: 480px) {
-    .banner-img #wrapper {
-        width: auto;
-    }
+  .banner-img #wrapper {
+    width: auto;
+  }
 }
 
 /* Add CSS styles for the loading state */
 .banner-img #submit.loading {
-    cursor: progress;
-    opacity: 0.8;
+  cursor: progress;
+  opacity: 0.8;
 }
 
 .video-wrapper {
-    position: relative;
-    width: 1000px;
-    height: 500px;
-    margin: 0 auto;
-    overflow: hidden;
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Sricky Footer */
-.fixed-bottom{
-	display:none;
+.fixed-bottom {
+  display: none;
 }
 
 .fixed-bottom {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1030;
-    padding:0px !important;
-    color:#fff !important;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  padding: 0px !important;
+  color: #fff !important;
 }
-.fixed-bottom b
-{
-    color:#fff !important;
+.fixed-bottom b {
+  color: #fff !important;
 }
 .secbgcolor {
-    background-color: #767574 !important;
-    color:#fff !important;
+  background-color: #767574 !important;
+  color: #fff !important;
 }
 
-.w3-green, .w3-hover-green:hover {
-    color: #fff!important;
-    background-color: #4CAF50!important;
+.w3-green,
+.w3-hover-green:hover {
+  color: #fff !important;
+  background-color: #4caf50 !important;
+}
+
+/* Thank you section */
+.thankyou-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 78vh; /* Set the height of the container to the full viewport height */
+}
+
+.thankyou-container h1 {
+  font-size: 6rem;
+  text-align: center;
+  color: #05a5aa;
+}
+
+.thankyou-container p {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3.5rem;
 }
 
 /* Media query for screens below 768px */
 @media (max-width: 767px) {
-    .video-wrapper {
-        width: 100%;
-        padding-bottom: 56.25%;
-        height: 0;
-    }
-    .fixed-bottom{
-        display:block;
-    }
+  .video-wrapper {
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+  .fixed-bottom {
+    display: block;
+  }
+
+  .thankyou-container h1 {
+    font-size: 3rem;
+  }
+  .thankyou-container p {
+    font-size: 1.5rem;
+  }
 }
 
-
 footer {
-    background-color: #05A5AA;
-    padding: 20px 0;
-    margin: 20px 0 0 0;
+  background-color: #05a5aa;
+  padding: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 .footer-text {
-    color: #fff;
-    text-align: center;
-    margin: 0;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }

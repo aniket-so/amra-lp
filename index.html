@@ -127,7 +127,7 @@
                                             <input id="utm_term" type="hidden" name="utm_term" value="">
                                             <input id="utm_content" type="hidden" name="utm_content" value="">
                                             <input type="hidden" name="websiteUrl"
-                                                value="https://amracircle.com/admissions">
+                                                value="https://admission.amracircle.com">
                                             <div class="button-container">
                                                 <input id="submit" type="submit" value="Send">
                                             </div>
@@ -285,7 +285,7 @@
                 <div class="section-title text-center">
                     <h2>Sneak peek at <span>AMRA</span> early learning center</h2>
                 </div>
-        
+
                 <div style="text-align: center;">
                     <div class="video-wrapper">
                         <iframe class="responsive-iframe" src="https://www.youtube.com/embed/sOUkuJhSmbw"
@@ -294,7 +294,7 @@
                             allowfullscreen></iframe>
                     </div>
                 </div>
-        
+
             </div>
         </section>
 
@@ -302,30 +302,117 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-6 secbgcolor pt-2 pb-2">
-                        <a href="tel:919154309111" class="btn btn-block text-white"><b><i class="fa fa-phone"></i> Call Us</b></a>    
+                        <a href="tel:919154309111" class="btn btn-block text-white"><b><i class="fa fa-phone"></i> Call
+                                Us</b></a>
                     </div>
                     <div class="col-6 w3-green pt-2 pb-2">
-                        <a href="https://api.whatsapp.com/send?phone=919154309111&amp;text=Hi" target="_blank" class="btn btn-block text-white"><b><i class="fa-brands fa-whatsapp"></i> Chat with Us</b></a>    
+                        <a href="https://api.whatsapp.com/send?phone=919154309111&amp;text=Hi" target="_blank"
+                            class="btn btn-block text-white"><b><i class="fa-brands fa-whatsapp"></i> Chat with
+                                Us</b></a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <footer>
             <div class="container">
                 <p class="footer-text">COPYRIGHT © 2023 AMRA CIRCLE - ALL RIGHTS RESERVED.</p>
             </div>
-        </footer>     
-        
+        </footer>
+
         <!--back to top begin-->
-		<button class="back-to-top">
-			<i class="fas fa-arrow-up"></i>
-		</button>
-		<!--back to top end-->
+        <button class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <!--back to top end-->
 
     </div>
 
 
+    <script>
+        function getParameterByName(name) {
+            var url = (window.location.href).toLowerCase();
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            var results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('myForm');
+            var sendButton = document.getElementById('submit');
+
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    sendButton.disabled = true;
+                    sendButton.value = 'Please wait...';
+
+                    var fullName = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var city = document.getElementById('address').value;
+                    var phone = document.getElementById('phone').value;
+                    var childName = document.getElementById('cname').value;
+                    var age = document.getElementById('age').value;
+                    var course = document.getElementById('course').value;
+                    var utm_source = getParameterByName('utm_source');
+                    var utm_medium = getParameterByName('utm_medium');
+                    var utm_campaign = getParameterByName('utm_campaign');
+                    var utm_id = getParameterByName('utm_id');
+                    var utm_term = getParameterByName('utm_term');
+                    var utm_content = getParameterByName('utm_content');
+
+                    var data = {
+                        full_name: fullName,
+                        email: email,
+                        phone: phone,
+                        location: city,
+                        product: "",
+                        service: course,
+                        unit: "",
+                        message: `Child Name - ${childName}, Age - ${age}`,
+                        note: "",
+                        utm_source: utm_source,
+                        utm_medium: utm_medium,
+                        utm_campaign: utm_campaign,
+                        utm_term: utm_term,
+                        utm_id: utm_id,
+                        utm_content: utm_content
+                    };
+
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: JSON.stringify(data),
+                        redirect: 'follow',
+                        crossDomain: true,
+                    };
+
+                    fetch("https://amra-leadstore.onrender.com/submit", requestOptions)
+                        .then(response => response.text())
+                        .then(result => {
+                            form.reset();
+                            window.location.href = 'https://admission.amracircle.com/thank-you.html';
+                        })
+                        .catch(error => {
+                            console.error('Error submitting form:', error);
+                        })
+                        .finally(() => {
+                            sendButton.disabled = false;
+                            sendButton.value = 'Send';
+                        });
+                });
+            } else {
+                console.error('Form element with ID "myForm" not found.');
+            }
+        });
+    </script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/isotope.js"></script>
@@ -337,88 +424,3 @@
 </body>
 
 </html>
-
-<script>
-    function getParameterByName(name) {
-        var url = (window.location.href).toLowerCase();
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-        var results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById('myForm');
-        var sendButton = document.getElementById('submit');
-
-        if (form) {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                sendButton.disabled = true;
-                sendButton.value = 'Please wait...';
-
-                var fullName = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var city = document.getElementById('address').value;
-                var phone = document.getElementById('phone').value;
-                var childName = document.getElementById('cname').value;
-                var age = document.getElementById('age').value;
-                var course = document.getElementById('course').value;
-                var utm_source = getParameterByName('utm_source');
-                var utm_medium = getParameterByName('utm_medium');
-                var utm_campaign = getParameterByName('utm_campaign');
-                var utm_id = getParameterByName('utm_id');
-                var utm_term = getParameterByName('utm_term');
-                var utm_content = getParameterByName('utm_content');
-
-                var data = {
-                    full_name: fullName,
-                    email: email,
-                    phone: phone,
-                    location: city,
-                    product: "",
-                    service: course,
-                    unit: "",
-                    message: `Child Name - ${childName}, Age - ${age}`,
-                    note: "",
-                    utm_source: utm_source,
-                    utm_medium: utm_medium,
-                    utm_campaign: utm_campaign,
-                    utm_term: utm_term,
-                    utm_id: utm_id,
-                    utm_content: utm_content
-                };
-
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-
-                var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: JSON.stringify(data),
-                    redirect: 'follow',
-                    crossDomain: true,
-                };
-
-                fetch("https://amra-leadstore.onrender.com/submit", requestOptions)
-                    .then(response => response.text())
-                    .then(result => {
-                        form.reset();
-                        window.open('https://amracircle.com/thank-you');
-                    })
-                    .catch(error => {
-                        console.error('Error submitting form:', error);
-                    })
-                    .finally(() => {
-                        sendButton.disabled = false;
-                        sendButton.value = 'Send';
-                    });
-            });
-        } else {
-            console.error('Form element with ID "myForm" not found.');
-        }
-    });
-</script>
