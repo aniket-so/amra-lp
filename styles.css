@@ -5,6 +5,12 @@
 
 /* var(--blue); */
 
+/* Environment Section */
+.environment-section h3{
+  color: #085c60;
+  font-weight: 600;
+}
+
 /* Form code */
 
 .banner-img input,
